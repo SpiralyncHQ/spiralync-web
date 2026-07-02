@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #0A2540;
+  --color-teal: #00C896;
+  --color-slate: #1E3A5F;
+  --color-mist: #F0F4F8;
+  --color-white: #FFFFFF;
+  --color-charcoal: #1A1A2E;
+  --color-mid: #6B7280;
+  --color-border: #E2E8F0;
+  
+  --radius-card: 1.25rem;
+  
+  --shadow-card: 0 2px 8px rgba(10,37,64,0.08), 0 8px 32px rgba(10,37,64,0.06);
+  
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+@layer base {
+  :root {
+    --color-navy: #0A2540;
+    --color-teal: #00C896;
+    --color-slate: #1E3A5F;
+    --color-mist: #F0F4F8;
+    --color-white: #FFFFFF;
+    --color-charcoal: #1A1A2E;
+    --color-mid: #6B7280;
+    --color-border: #E2E8F0;
+    --radius-card: 1.25rem;
+    --shadow-card: 0 2px 8px rgba(10,37,64,0.08), 0 8px 32px rgba(10,37,64,0.06);
+    --font-display: 'Plus Jakarta Sans', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--color-charcoal);
+    background: var(--color-white);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-teal) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .card-shadow {
+    box-shadow: var(--shadow-card);
+  }
+
+  /* Scroll Reveal animations */
+  .reveal-base {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s cubic-bezier(0.215, 0.610, 0.355, 1), 
+                transform 0.7s cubic-bezier(0.215, 0.610, 0.355, 1);
+  }
+
+  .reveal-base.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Reduced Motion overrides */
+  .reveal-reduced-motion {
+    transform: none !important;
+    transition: opacity 0.4s ease !important;
+  }
+  .reveal-reduced-motion.is-visible {
+    opacity: 1 !important;
+  }
+}
