@@ -1,4 +1,4 @@
-# Spiralync — Official Website
+# Spiralync — Official Website.
 
 > A full-featured company website for Spiralync built with Vue 3 + Vite + TypeScript + Tailwind CSS v4, Firebase backend, and a custom headless CMS.
 
